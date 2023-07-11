@@ -30,11 +30,6 @@ http://www.wooleesmart.com/
 
 ## 三、Maven 配置
 
-
-
-
-
-
-
-
-
+```bash 
+.\mvnw.cmd clean compile exec:java
+```

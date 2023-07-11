@@ -77,8 +77,8 @@ goto error
 if exist "%JAVA_HOME%\bin\java.exe" goto init
 
 echo.
-echo Ä¿Â¼%JAVA_HOME%²»´æÔÚ
-echo Çë¿ËÂ¡GitÏîÄ¿jdk17µ½Ä¿Â¼D:\gitRepoÏÂ,¿ËÂ¡µØÖ·:
+echo ç›®å½•%JAVA_HOME%ä¸å­˜åœ¨
+echo è¯·å…‹éš†Gité¡¹ç›®jdk17åˆ°ç›®å½•D:\gitRepoä¸‹,å…‹éš†åœ°å€:
 echo ssh://git@192.168.2.7:22/root/MingChuang/qkGit/jdk17
 echo.
 goto error

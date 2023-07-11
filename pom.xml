@@ -271,7 +271,12 @@
 
 	</profiles>
 
-
+	<repositories>
+		<repository>
+			<id>mylibid</id>
+			<url>file://${project.basedir}/src/libs</url>
+		</repository>
+	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.pdfbox</groupId>
@@ -287,6 +292,7 @@
 			<groupId>com.cg.core</groupId>
 			<artifactId>core-gui</artifactId>
 			<version>${core-gui.version}</version>
+			<!-- <systemPath>${basedir}/src/libs/core-gui-1.2-SNAPSHOT.jar</systemPath> -->
 		</dependency>
 
 		<dependency>
