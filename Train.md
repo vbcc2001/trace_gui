@@ -28,8 +28,10 @@ http://www.wooleesmart.com/
 ### 3. 扫描枪：非必须，可通过键盘模拟
 
 
-## 三、Maven 配置
+## 三、本地调试运行
 
 ```bash 
+
+mvn clean compile exec:java
 .\mvnw.cmd clean compile exec:java
 ```
