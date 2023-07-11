@@ -31,7 +31,5 @@ http://www.wooleesmart.com/
 ## 三、本地调试运行
 
 ```bash 
-
 mvn clean compile exec:java
-.\mvnw.cmd clean compile exec:java
 ```
