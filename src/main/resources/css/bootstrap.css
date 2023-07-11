@@ -1,0 +1,16 @@
+.choice-box{
+	-fx-pref-width: 300;
+}
+.choice-box .menu-item{
+	-fx-pref-width: 300;
+}
+.choice-box .menu-item .label{	
+	-fx-alignment: center;
+	-fx-text-alignment: center;	
+}
+.errInput{	
+	-fx-font-weight: 900;
+	-fx-font-family: SimSun;
+	-fx-font-size: 30;
+	-fx-fill: red;
+}

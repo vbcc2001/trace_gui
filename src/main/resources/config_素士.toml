@@ -1,0 +1,45 @@
+title = "TOML Example"
+
+[index]
+    moduleNames = [ "productInfo","productLaser", "colorBoxPrint", "weighBox","cartoonBoxPrint", "palletPrint", "shipping" ,"preferences"]
+
+[version]
+    #name = "old"
+    name = "S101"
+
+[dict]
+    "产品料号" = "productPartNumber" 
+    "产品名称" = "productName" 
+    "产品型号" = "productType" 
+    "产品颜色" = "productColor" 
+    "项目 SPU" = "projectSPU"
+    "69 码" = "code69"
+    "商品 id" = "productId"
+    "SKU" = "SKU"
+    "SKU 名称" = "productName"
+    "工厂代码" = "factoryCode"
+    "产品数量" = "productNumber"
+    "日期" = "createDate"
+    "生态链公司" = "ecologicalChain"
+    "装载数量" = "quantity"
+    "长(mm)" = "boxLength"
+    "宽(mm)" = "boxWidth"
+    "高(mm)" = "boxHeight"
+    "长(cm)" = "boxLength"
+    "宽(cm)" = "boxWidth"
+    "高(cm)" = "boxHeight"
+
+    "净重(kg)" = "boxNetWeight"
+    "毛重(kg)" = "boxGrossWeight"
+    "车间代码" = "workshopCode"
+    "生产线" = "workshopCode"
+    "出货地" = "fromArea"
+    "目的地" = "toArea"
+    "装板数量" = "quantity"
+    "采购订单号" = "PO"
+    "托盘毛重" = "grossWeight"
+    "单号" = "shippingCode"
+    "栈板号" = "palletCode"
+    "中箱号" = "boxCode"
+    "开始日期" = "dateStart"
+    "结束日期" = "dateEnd"

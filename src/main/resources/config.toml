@@ -1,0 +1,10 @@
+title = "TOML Example"
+
+[index]
+    moduleNames = [ "productInfo","productLaser", "colorBoxPrint", "weighBox","cartoonBoxPrint", "boxPost","palletPrint", "palletPost","shipping" , "query","user", "preferences"]
+
+[version]
+    number = "V3.1.12"
+	server ="V3.2.6"
+
+

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG">
+    <Properties>
+        <!-- 格式化输出：%date 表示日期，%thread 表示线程名，%-5level：级别从左显示 5 个字符宽度 %msg：日志消息，%n 是换行符-->
+        <!-- %logger{36} 表示 Logger 名字最长 36 个字符 -->
+        <!-- 日志高亮显示需要加上JVM启动参数-Dlog4j.skipJansi=false-->
+        <property name="LOG_HOME">${sys:trace_home}</property>
+        <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %highlight{%-5level} %C%n(%F:%L) - %msg%n" />
+        <property name="LOG_FILE_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %C%n(%F:%L) - %msg%n" />
+        <!-- 定义日志存储的路径 -->
+        <property name="FILE_PATH" value="${LOG_HOME}/log" />
+        <property name="FILE_NAME" value="info" />
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </Console>
+        <RollingFile name="RollingFileInfo" fileName="${FILE_PATH}/${FILE_NAME}.log" filePattern="${FILE_PATH}/${FILE_NAME}-%d{yyyy-MM-dd}_%i.log.gz" append="true">
+            <PatternLayout pattern="${LOG_FILE_PATTERN}" charset="UTF-8"/>
+            <Policies>
+                <!-- 基于时间的触发策略。该策略主要是完成周期性的log文件封存工作。有两个参数：
+                    interval，integer型，指定两次封存动作之间的时间间隔。单位:以日志的命名精度来确定单位，
+                    比如yyyy-MM-dd-HH 单位为小时，yyyy-MM-dd-HH-mm 单位为分钟
+                    modulate，boolean型，说明是否对封存时间进行调制。若modulate=true，
+                    则封存时间将以0点为边界进行偏移计算。比如，modulate=true，interval=4hours，
+                    那么假设上次封存日志的时间为00:00，则下次封存日志的时间为04:00，
+                之后的封存时间依次为08:00，12:00，16:00-->
+                <TimeBasedTriggeringPolicy interval="1"/>
+                <SizeBasedTriggeringPolicy size="10MB"/>
+            </Policies>
+            <!-- DefaultRolloverStrategy 属性如不设置，则默认为最多同一文件夹下当天 7 个文件后开始覆盖-->
+            <DefaultRolloverStrategy max="30">
+                <!-- 删除处理策略，在配置的路径中搜索，maxDepth 表示往下搜索的最大深度 -->
+                <Delete basePath="${FILE_PATH}/" maxDepth="2">
+                <!-- 文件名搜索匹配，支持正则 -->
+                    <IfFileName glob="*.log.gz" />
+                    <!--!Note: 这里的 age 必须和 filePattern 协调, 后者是精确到 dd, 这里就要写成 xd, xD 就不起作用
+                    另外, 数字最好 >2, 否则可能造成删除的时候, 最近的文件还处于被占用状态,导致删除不成功!-->
+                    <!--7天-->
+                    <IfLastModified age="2d" />
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <AsyncLogger name="org.springframework" level="warn" additivity="false">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="infoLog"/>
+        </AsyncLogger>
+        <AsyncRoot level="DEBUG" includeLocation="true">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="RollingFileInfo" />
+        </AsyncRoot>
+    </Loggers>
+</Configuration>
+
