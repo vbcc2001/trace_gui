@@ -28,8 +28,17 @@ http://www.wooleesmart.com/
 ### 3. 扫描枪：非必须，可通过键盘模拟
 
 
-## 三、本地调试运行
+## 三、前端本地调试运行
 
 ```bash 
 mvn clean compile exec:java
+```
+
+## 四、后端本地调试运行
+
+```bash
+# 运行素士版本
+mvn spring-boot:run -Dport=8082
+# 运行小米版本
+mvn spring-boot:run -Pxiaomi -Dport=8081
 ```
