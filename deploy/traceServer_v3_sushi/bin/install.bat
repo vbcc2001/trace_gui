@@ -1,12 +1,12 @@
 @echo off
 
-set SERVICE_EN_NAME=traceServer-v3-sushi
-set SERVICE_CH_NAME=traceServer-v3-sushi Demo
+set SERVICE_EN_NAME=traceServer-v3-xiaomi
+set SERVICE_CH_NAME=traceServer-v3-xiaomi Demo
 echo %SERVICE_CH_NAME%
 
 cd /d %~dp0\..
 set BASEDIR=%CD%
-set CLASSPATH=%BASEDIR%\lib\server-sushi-V3-SNAPSHOT.jar
+set CLASSPATH=%BASEDIR%\lib\server-xiaomi-V3-SNAPSHOT.jar
 set MAIN_CLASS=org.springframework.boot.loader.JarLauncher
 
 set JAVA_HOME=%BASEDIR%\jre

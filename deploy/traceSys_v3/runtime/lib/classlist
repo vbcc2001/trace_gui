@@ -375,6 +375,7 @@ jdk/internal/module/ModuleReferenceImpl
 jdk/internal/module/SystemModuleFinders$SystemModuleFinder
 jdk/internal/loader/BootLoader
 jdk/internal/loader/NativeLibraries
+jdk/internal/loader/ClassLoaderHelper
 java/util/Queue
 java/util/Deque
 java/util/ArrayDeque
@@ -462,6 +463,7 @@ java/lang/invoke/MethodHandleImpl$Intrinsic
 java/lang/Readable
 java/nio/CharBuffer
 java/nio/HeapCharBuffer
+java/lang/StringCoding
 java/nio/charset/CoderResult
 @lambda-form-invoker [LF_RESOLVE] java.lang.invoke.DirectMethodHandle$Holder invokeStatic L7_L
 java/lang/Module$ReflectionData
@@ -668,7 +670,6 @@ sun/nio/fs/NativeBuffer
 sun/nio/fs/NativeBuffer$Deallocator
 sun/nio/fs/WindowsNativeDispatcher
 jdk/internal/loader/NativeLibraries$LibraryPaths
-jdk/internal/loader/ClassLoaderHelper
 jdk/internal/loader/NativeLibraries$1
 java/util/ArrayDeque$DeqIterator
 jdk/internal/loader/NativeLibrary
@@ -705,7 +706,6 @@ java/util/Locale
 sun/util/locale/BaseLocale
 sun/util/locale/LocaleUtils
 jdk/internal/perf/PerfCounter$CoreCounters
-java/lang/StringCoding
 java/util/zip/ZipEntry
 java/util/jar/JarEntry
 java/util/jar/JarFile$JarFileEntry
@@ -825,6 +825,10 @@ java/lang/invoke/StringConcatFactory
 java/lang/invoke/StringConcatFactory$1
 java/lang/invoke/StringConcatFactory$2
 java/lang/invoke/StringConcatFactory$3
+jdk/internal/vm/PostVMInitHook
+jdk/internal/vm/PostVMInitHook$2
+jdk/internal/util/EnvUtils
+jdk/internal/vm/PostVMInitHook$1
 sun/launcher/LauncherHelper
 java/nio/charset/CharsetDecoder
 sun/nio/cs/ArrayDecoder
@@ -846,6 +850,9 @@ java/lang/NamedPackage
 java/lang/Package
 java/lang/Package$VersionInfo
 sun/nio/ByteBuffered
+java/util/zip/Checksum
+java/util/zip/CRC32
+java/util/zip/Checksum$1
 java/security/SecureClassLoader$CodeSourceKey
 java/security/SecureClassLoader$1
 java/security/PermissionCollection
@@ -1281,6 +1288,7 @@ sun/util/locale/provider/CalendarProviderImpl
 java/util/Calendar$Builder
 java/util/GregorianCalendar
 sun/util/calendar/CalendarSystem
+sun/util/calendar/CalendarSystem$GregorianHolder
 sun/util/calendar/AbstractCalendar
 sun/util/calendar/BaseCalendar
 sun/util/calendar/Gregorian

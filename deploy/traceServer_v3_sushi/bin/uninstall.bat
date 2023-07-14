@@ -1,7 +1,7 @@
 @echo off
 cd /d %~dp0\..
 set basedir=%CD%
-set SERVICE_NAME=traceServer-v3-sushi
+set SERVICE_NAME=traceServer-v3-xiaomi
 set SRV=%BASEDIR%\bin\prunsrv.exe
 set TRAC_NAME=TSUSER
 set /p SERVICE_PID=<%BASEDIR%\log\server.pid

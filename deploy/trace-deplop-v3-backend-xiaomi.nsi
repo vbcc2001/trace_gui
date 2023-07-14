@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "ÐÂ×·ËÝÏµÍ³"
-!define PRODUCT_VERSION "V3.2.7"
+!define PRODUCT_VERSION "V3.2.9"
 !define PRODUCT_PUBLISHER ""
 !define PRODUCT_WEB_SITE ""
 
