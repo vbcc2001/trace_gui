@@ -353,36 +353,12 @@ def base64_to_PIL(string):
         print(e)
         return None
 
-
-from table import extract
-from table import NpEncoder
-def table_to_json():
-    parser = reqparse.RequestParser()
-    parser.add_argument('data',required=True) 
-    data = parser.parse_args()
-     
-    img = data['data']
-     
-    img = re.sub(' ','+',img)
-    img = base64_to_PIL(img)
-    print(img)
-    im = img.convert("RGB")
-    with tempfile.TemporaryDirectory() as tmpdirname:
-        path = tmpdirname+"table.png";
-        im.save(path)
-        res = extract(path)
-        #return jsonify(res,cls=NpEncoder)
-        return res
-        
-
-
 todos = {
             'favicon.ico':'',
             'patch_list':patch_list,
             'patch_server':patch_server,
             'license':license,
             'license_2023':license_2023,
-            'table_to_json':table_to_json,
         }
 
 class TodoSimple(Resource):
